@@ -1,0 +1,32 @@
+body {
+    background-color: #f1f5fd;
+}
+
+header h1 {
+    margin: 1rem auto 1rem 1rem;
+    text-align: left !important;
+}
+
+.form {
+    background-color: white;
+    padding: 3rem;
+    margin-top: 3rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px lightgray;
+    border-top: 10px solid #ef5450 ;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+input:first-of-type{
+    margin-bottom: 1rem;
+}

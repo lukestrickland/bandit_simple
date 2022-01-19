@@ -1,0 +1,44 @@
+body {
+    background-color: #f1f5fd;
+}
+
+header {
+    border-bottom: 10px solid #26a69a;
+}
+
+header h1 {
+    margin: 1rem auto 1rem 1rem;
+    text-transform: uppercase;
+}
+
+.content-container {
+    background-color: white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px lightgray;
+}
+
+h2 {
+    margin-bottom: 3rem;
+}
+
+.special-code {
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 0.7rem 1rem;
+    box-shadow: 2px 2px 20px lightgray;
+    display: inline-block;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+}
+
+.special-code b {
+    font-family: 'Montserrat' !important;
+}
+
+p:last-child {
+    margin-top: 5rem;
+}

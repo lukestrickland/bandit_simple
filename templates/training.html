@@ -1,0 +1,56 @@
+<!-- TRAINING HTML PAGE -->
+
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/trainingpage.css')}}">
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/commonScript.js') }}"></script>
+<script src="{{ url_for('static', filename='js/trainingScript.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<!-- this div is used to turn on the overlay after the trial count is exhausted -->
+<div class="trainingOverlay" id="overlay">
+    <div class="overlay-content-container">
+        <!-- the text inside this p tag will get replaced when question is asked -->
+        <p>Your training is complete.</p>
+        <br>
+        <div>
+            <p>Click proceed to enter the Game phase.</p>
+        </div>
+        <br>
+        <button onclick="turnOffOverlay()" id="overlay-next-button">Proceed</button>
+    </div>
+</div>
+
+<!-- this div is used to turn on the overlay when a certain trail count is hit at which a question is asked -->
+<div class="training-question-overlay" id="question-overlay">
+    <div class="question-content-container">
+        <h3>QUESTION</h3>
+        <br>
+        <p class="question">Question Placeholder Text</p>
+        <br>
+        <div class="answer-options"><i>placeholder text for populating answer options</i></div>
+        <br>
+        <button onclick="hideQuestionOverlay()" id="question-submit-button">Submit Answer</button>
+    </div>
+</div>
+
+<div class="game-counters">
+    <div class="counter-indicator trial-count">
+        <p>Trials: &nbsp; <span class="running-trial-count">--</span>/<span class="total-trial-count">---</span></p>
+    </div>
+    <div class="counter-indicator reward-count">
+        <p>Total reward: &nbsp; <span class="running-reward-count">--</span></p>
+    </div>
+</div>
+
+<div class="game-container text-center">
+    <!-- Content is rendered here by the commonScript and gameScript js files -->
+</div>
+
+{% endblock %}

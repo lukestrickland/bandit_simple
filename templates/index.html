@@ -1,0 +1,68 @@
+<!-- INDEX HTML PAGE -->
+
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/indexpage.css')}}">
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/indexScript.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="form text-left form-container">
+
+        {% if message %}
+        <p class="message" style="color:red;">{{ message | safe }}</p>
+        {% endif %}
+
+        <form action="/consent" method="POST">
+
+            <!-- MTURK WORKER ID INPUT FIELD -->
+            <div class="form-group">
+
+                <label for="userid" id="userIdLabel">MTurk Worker ID:</label>
+                <input type="text" id="userid" name="userid" class="form-control"
+                    placeholder="Please enter your worker ID" required>
+            </div>
+            <br>
+
+            <!-- GENDER DROPDOWN FIELD -->
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender" class="form-control form-control-sm" required>
+                    <option value="">Select an option</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <br>
+
+            <!-- AGE DROPDOWN FIELD -->
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <select name="age" id="age" class="form-control form-control-sm" required>
+                    <option value="">Select an option</option>
+                </select>
+            </div>
+            <br>
+
+            <!-- SUBMIT BUTTON FIELD -->
+            <div class="form-group text-center">
+                <!-- <button type="button" id="login-form-next-button" onclick="saveFormData()">Next</button> -->
+                <input type="submit" id="login-form-next-button" value="Next">
+                <br>
+                <br>
+                <p class="already-taken-paragraph">Note: If you have already taken the experiment, enter your MTurk ID
+                    to see the submission code</p>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

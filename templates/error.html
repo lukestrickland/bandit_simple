@@ -1,0 +1,24 @@
+<!-- ERROR HTML PAGE -->
+
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/errorpage.css')}}">
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container text-center">
+    <div class="content-container">
+        <h2><i class="ion-android-close"></i>Sorry, the page you are
+            trying to access does not exist</h2>
+        <p><a href="{{url_for('index')}}" id="go-to-homepage-button">Go to Homepage</a></p>
+    </div>
+
+</div>
+
+
+{% endblock %}

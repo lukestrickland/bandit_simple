@@ -1,0 +1,76 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1616261167032-b16d2df8333b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: auto;
+}
+
+header h1 {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+.game-counters {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.game-counters .counter-indicator {
+    background-color: #dee3eb;
+    box-shadow: none;
+    padding-top: 0.25rem;
+    padding-bottom: 0.35rem;
+}
+
+.counter-indicator:first-child {
+    border-top: 10px solid #26a69a;
+}
+
+.counter-indicator:last-child {
+    border-top: 10px solid #ef5450;
+}
+
+.counter-indicator p {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.running-trial-count,
+.running-reward-count {
+  font-size: 1.5rem;
+  
+}
+
+.running-trial-count {
+    color: #ef5450;
+}
+
+.running-reward-count {
+    color: #26a69a;
+}
+
+.gamescreen {
+    background-color: #dee3eb;
+    box-shadow: none;
+    transition: transform 0.2s;
+}
+
+.gamescreen:hover {
+    transform: scale(1.02);
+}
+
+.bandit-content {
+    cursor: pointer;
+}
+
+.bandit-content:hover {
+    box-shadow: 2px 2px 30px rgb(131, 131, 131);
+}
+
+.unclickable {
+    background-color: rgb(128, 128, 128);
+    box-shadow: 2px 2px 20px rgb(138, 138, 138);
+}

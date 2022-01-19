@@ -1,0 +1,49 @@
+<!-- ADMIN LOGIN HTML PAGE -->
+
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/adminloginpage.css')}}">
+{% endblock %}
+
+{% block scripts %}
+<!-- <script src="{{ url_for('static', filename='js/indexScript.js') }}"></script> -->
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="form text-left form-container">
+        <h2>Admin Login</h2>
+        {% if message %}
+        <p class="message" style="color:red;">{{ message | safe }}</p>
+        {% endif %}
+
+        <form action="/admin_login" method="POST">
+
+            <!-- MTURK WORKER ID INPUT FIELD -->
+            <div class="form-group">
+
+                <label for="username" id="username"><b>Admin Username</b></label>
+                <input type="text" id="username" name="username" class="form-control"
+                    placeholder="Please enter your username" required>
+            </div>
+            <br>
+            <div class="form-group">
+
+                <label for="password" id="password"><b>Admin Password</b></label>
+                <input type="password" id="password" name="password" class="form-control"
+                    placeholder="Please enter your password" required>
+            </div>
+
+            <br>
+
+            <!-- SUBMIT BUTTON FIELD -->
+            <div class="form-group text-center">
+                <input type="submit" id="login-form-next-button" value="Login">
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

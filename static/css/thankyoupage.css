@@ -1,0 +1,40 @@
+body{
+    background-color: #f1f5fd;
+}
+
+header {
+    border-bottom: 10px solid #26a69a;
+}
+
+header h1 {
+    margin: 1rem auto 1rem 1rem;
+    text-transform: uppercase;
+}
+
+.content-container {
+    background-color: white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px lightgray;
+}
+
+#submission-code {
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 1rem 2rem;
+    box-shadow: 2px 2px 20px lightgray;
+    display: inline-block;
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    margin-bottom: 5rem;
+}
+
+.ion-android-checkmark-circle {
+    color: #26a69a;
+    margin-right: 1rem;
+    font-size: 5rem;
+    vertical-align: middle;
+    margin-right: 3rem;
+}

@@ -1,0 +1,32 @@
+<!-- THANK YOU HTML PAGE -->
+
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/thankyoupage.css')}}">
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/thankyouScript.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<header class="text-center">
+    <h1 id="duplicate">Completed</h1>
+</header>
+
+<div class="container text-center">
+    <div class="content-container">
+        <h2><i class="ion-android-checkmark-circle"></i> Thanks for completing the study</h2>
+        <br><br>
+        <p>Your submission code:</p>
+        <!-- Keep the "submission-code" as id only as the js depends on this -->
+        <!-- If you want to change this to a class, then make sure to update the js as well -->
+        <p id="submission-code">...generating your code</p>
+        <br><br>
+
+        <p><a href="{{url_for('index')}}" id="go-to-homepage-button">Go to Homepage</a></p>
+    </div>
+
+</div>
+{% endblock %}

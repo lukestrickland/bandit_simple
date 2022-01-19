@@ -1,0 +1,27 @@
+<!-- DUPLICATE HTML PAGE -->
+
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/duplicatepage.css')}}">
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block content %}
+<header class="text-center">
+    <h1 id="duplicate">Thanks for participating</h1>
+</header>
+
+<div class="container text-center">
+    <div class="content-container">
+        <h2>Your response has already been recorded !!</h2>
+        <p>Your MTurk Worker ID is <span class="special-code"><b>{{ user_id | safe }}</b></span></p>
+        <p>And your submission code is <span class="special-code"><b>{{ user_code | safe }}</b></span></p>
+        <p><a href="{{url_for('index')}}" id="go-to-homepage-button">Go to Homepage</a></p>
+    </div>
+
+</div>
+
+{% endblock %}

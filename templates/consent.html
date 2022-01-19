@@ -1,0 +1,68 @@
+<!-- CONSENT HTML PAGE -->
+
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/consentpage.css')}}">
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/consentScript.js') }}"></script>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container">
+
+    <div class="content-container">
+        <h2>Consent Agreement:</h2>
+        <br>
+        <p>This page contains the consent form that needs to be accepted by the user </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit rerum debitis soluta. Omnis, totam. Impedit,
+            ducimus sunt odit sequi harum facilis dolorum corporis aliquam vel fuga officia assumenda. Obcaecati aliquam
+            placeat eos libero neque tempora, atque eveniet ab officiis numquam suscipit veritatis hic, beatae debitis
+            itaque, esse impedit sunt temporibus eum molestiae voluptatibus odio qui. Ipsa, officiis dolorum! Magnam
+            recusandae, voluptates labore a tempore magni laboriosam perferendis temporibus necessitatibus assumenda
+            possimus, autem consequatur, inventore aspernatur? At beatae laboriosam et qui! Illo, debitis veritatis
+            similique ullam, explicabo nobis maiores necessitatibus eligendi dolor, inventore mollitia rerum praesentium
+            excepturi hic possimus? Temporibus, culpa. </p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic consectetur aliquam quos totam illum
+            perspiciatis! Sequi velit praesentium vitae repudiandae alias tenetur molestiae at suscipit dolorum
+            officiis? Corporis omnis eaque recusandae, fuga natus exercitationem quo laborum ipsum error facere
+            voluptate impedit aut eum nostrum repudiandae animi tenetur provident amet minus. Sapiente reiciendis est
+            error voluptate, accusantium ad sunt placeat facere harum voluptates soluta earum rem nesciunt fugit ab
+            illum maxime inventore quam dolorum! Rem dignissimos vitae dolorem autem laudantium saepe illo neque,
+            praesentium molestias cumque? Itaque, ad natus ratione dicta, quibusdam, eveniet distinctio nobis molestiae
+            laborum nostrum soluta dolor officia.
+        </p>
+
+        <div class="consent-sign">
+            <p class="consent-error" style="color:red;">&nbsp;</p>
+            <input type="checkbox" id="consent-agreement-button" value="consent-value">&nbsp; &nbsp; I agree to the
+            terms and conditions mentioned in the consent form</input>
+            <br>
+            <br>
+            <button id="consent-agreement-button" onclick="takeToGamePage()">Accept</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- This script is placed at the end of the body element so that deferred execution takes -->
+<script>
+    var user_id = '{{ user_id | safe }}';
+    sessionStorage.setItem("userId", user_id);
+
+    var user_gender = '{{ user_gender | safe }}';
+    sessionStorage.setItem("userGender", user_gender);
+
+    var user_age = '{{ user_age | safe }}';
+    sessionStorage.setItem("userAge", user_age);
+</script>
+
+{% endblock %}

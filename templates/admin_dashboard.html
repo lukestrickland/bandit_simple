@@ -1,0 +1,58 @@
+<!-- ADMIN DASHBOARD HTML PAGE -->
+
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/admindashboardpage.css')}}">
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/adminDashboardScript.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="admin-actions-buttons-container">
+        <button id="download-data-button" onclick="exportToCSV()">Download All Data</button>
+        <a href="{{url_for('admin_logout')}}" class="admin-logout-link">Logout</a>
+    </div>
+    <br>
+    <div class="stats">
+        <p class="shadow-box-div">No of submissions: <span class="stats-number">{{ count }}</span></p>
+        <p class="shadow-box-div">Male participants: <span class="stats-number">{{ male_count }}</span></p>
+        <p class="shadow-box-div">Female participants: <span class="stats-number">{{ female_count }}</span></p>
+        <p class="shadow-box-div">Other participants: <span class="stats-number">{{ other_count }}</span></p>
+    </div>
+
+
+    <br>
+    <table>
+        <tr>
+            <th>MTurk ID</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <!-- <th>Training Data</th> -->
+            <!-- <th>Game Data</th> -->
+            <th>Submission code</th>
+        </tr>
+
+        {% for each_user in userdata %}
+        <tr>
+            <td>{{each_user.userId}}</td>
+            <td>{{each_user.gender}}</td>
+            <td>{{each_user.age}}</td>
+            <!-- <td>{{each_user.trainingData}}</td>
+            <td>{{each_user.gameData}}</td> -->
+            <td>{{each_user.submissionCode}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% if (userdata | length) == 0 %}
+    <p class="text-center">No data to display</p>
+    {% endif %}
+</div>
+
+
+{% endblock %}
